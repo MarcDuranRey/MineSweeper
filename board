@@ -1,1 +1,102 @@
 
+using System;
+using System.IO;
+
+namespace minesweeper
+{
+	public class Board
+	{
+		// Attributes
+		private string _file;
+		private Cell[,] _cells;
+		private int _numRows;
+		private int _numCols;
+		private int _numCellsNoMines;
+		private int _numUncoveredCells;
+
+		// Methods
+		public Board()
+		{
+			// Default constructor
+			_file = "";
+			_numRows = 0;
+			_numCols = 0;
+			_numCellsNoMines = 0;
+			_numUncoveredCells = 0;
+		}
+
+		public Board(int nRows, int nCols, string fileName)
+		{
+			// Constructor with parameters
+			if (nRows > 0 && nCols > 0)
+			{
+				_file = fileName;
+				_numRows = nRows;
+				_numCols = nCols;
+				_numCellsNoMines = 0;
+				_numUncoveredCells = 0;
+
+				_cells = new Cell[_numRows, _numCols];
+			}
+			else Console.WriteLine ("Error: Rows and columns of the board need to be > 0");
+		}
+
+        public bool load(string fileName)
+        {
+                // Read the board from "fileName" and fill the _cells with its information
+                try
+            {
+                using (StreamReader sr = new StreamReader(fileName))
+                {
+                    string line;
+                    _numCols = sr.ReadLine;
+                    _numRows = sr.ReadLine
+
+                        _cella = new Cell[_numRows, _numCols];
+                       
+              
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        Console.WriteLine(line);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("The file could not be read");
+                Console.WriteLine(e.Message);
+                return false;
+            }
+
+            for (int i = 0; i < fileName.Length; i++)
+            {
+               
+                else
+                {
+                    _cells[i] = fileName[i];
+                }
+            }
+                    // Update all the class attributes
+            return true;
+        }
+
+		public bool finished()
+		{
+			return (_numCellsNoMines == _numUncoveredCells);
+		}
+
+		public void print()
+		{
+            // Print the content of the board
+
+            for (int i = 0; i < _numRows; i++)​
+            {​
+                for (int k = 0; k < _numCols; k++)
+                {
+                  
+                }
+            }​
+
+		}
+    }
+}
